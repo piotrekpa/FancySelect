@@ -94,7 +94,7 @@ $.fn.fancySelect = (opts = {}) ->
       disabled = true
 
     sel.on 'change.fs', (e) ->
-      if e.originalEvent && e.originalEvent.isTrusted
+      if e.originalEvent && e.originalEvent.isTrusted && !isiOS
         # discard firefox-only automatic event when hitting enter, we want to trigger our own
         e.stopPropagation()
       else

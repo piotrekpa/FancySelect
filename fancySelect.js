@@ -104,7 +104,7 @@
         return disabled = true;
       });
       sel.on('change.fs', function(e) {
-        if (e.originalEvent && e.originalEvent.isTrusted) {
+        if (e.originalEvent && e.originalEvent.isTrusted && !isiOS) {
           return e.stopPropagation();
         } else {
           return updateTriggerText();
